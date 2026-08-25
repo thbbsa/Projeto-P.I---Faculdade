@@ -26,7 +26,7 @@
 //     console.log(`Atendendo o cliente: ${clientes[0]}`)
 //     clientes.shift();
 //     exibirFilaAtendimento()
-    
+
 // }
 
 // function exibirFilaAtendimento() {
@@ -50,7 +50,30 @@ function atenderCliente() {
     if (fila.length > 0) {
         let nome = fila.shift();
         alert(`cliente ${nome} atendido!`)
+        exibirFilaDeAtendimento();
+        atenderProxCliente();
     } else {
         alert("Não há clientes na fila.");
     }
+}
+
+function exibirFilaDeAtendimento() {
+    if (fila.length > 0) {
+        alert(`Fila de Atendimento: ${fila}`)
+    } else {
+        alert("Fila vazia.")
+    }
+}
+
+function atenderProxCliente() {
+    if (fila.length > 0) {
+        const op = confirm("Deseja atender outro cliente?");
+
+        if (op) {
+            atenderCliente();
+        } else {
+            alert("Atendimento encerrado.");
+        }
+    }
+
 }
