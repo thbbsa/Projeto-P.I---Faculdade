@@ -10,15 +10,17 @@
 <body>
     <h1>Arrow Function</h1>
     <p>Veja como é simples usar uma arrow function (função e seta)</p>
-    <script>
-        saudacao = () => {
-            alert("Bem-vindos às Arrow Functions!");
-        }
-        despedida = () => alert("Até logo!");
-    </script>
     <p>Clique nos botões abaixo:</p>
-    <input type="button" name="input-hello" id="input-hello" onclick="saudacao()" value="Olá!" />
-    <input type="button" name="input-bye" id="input-bye" onclick="despedida()" value="Adeus!" />
+    <input id="texto" type="text">
+    <input type="button" name="input-hello" id="input-hello" onclick="saudacaoFunc()" value="Comprimentar" />
+
+    <script>
+        let saudacao = document.getElementById('texto')
+
+        saudacaoFunc = () => {
+            alert(`Bom dia, ${saudacao.value}`);
+        }
+    </script>
 </body>
 
 </html>
