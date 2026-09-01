@@ -22,7 +22,7 @@ export class ContaCorrente {
         this.saldo -= valor;
     } 
 
-    pagar(...
+    pagar(...args) {
         // apenas 1 parâmetro
         if (args.length === 1) {
             this.saldo -= args[0];
@@ -30,7 +30,7 @@ export class ContaCorrente {
             this.saldo -= args[0]
             console.log("Pagando " + args[1])
         } else {
-            console.log("Parâmetros inválidos")
+            console.log("Parâmetros inválido")
         }
     }
 
