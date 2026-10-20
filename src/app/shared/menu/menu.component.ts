@@ -11,6 +11,7 @@ import { RouterLink } from '@angular/router';
 export class MenuComponent {
   itensMenu = [
     { label: 'Inicio', link: '' },
+    { label: 'Cadastre-se', link: '/cliente-cadastro' },
     { label: 'Clientes', link: '/clientes' },
     { label: 'Contas', link: '/contas' },
     { label: 'Sobre', link: '/sobre' }
