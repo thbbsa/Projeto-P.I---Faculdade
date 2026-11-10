@@ -1,12 +1,23 @@
 {
-   "clientes": [
+  "clientes": [
     {
-        "id": "1", 
-        "nome": "Enzo",
-        "sobrenome": "SIlva",
-        "cpf": "125359825825",
-        "email": "enzo@gmail.com",
-        "dataNascimento": "2008-06-24"
+      "cpf": "25252525252525",
+      "nome": "Thiagoooo",
+      "sobrenome": "Barbosa",
+      "dataNascimento": "2007-09-24",
+      "email": "thiago.b2007@gmail.commmmm",
+      "senha": "123",
+      "id": "iZdhRgQ"
+    },
+    {
+      "cpf": "25252525252525",
+      "nome": "thiago",
+      "sobrenome": "barbosa",
+      "dataNascimento": "2007-09-24",
+      "email": "thiago.b2007@gmail.com",
+      "senha": "123",
+      "id": "bjxtK7w"
     }
-]
+  ],
+  "produtos": []
 }

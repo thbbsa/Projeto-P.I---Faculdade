@@ -1,4 +1,7 @@
+
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Cliente } from '../model/cliente';
 
 @Injectable({
@@ -6,15 +9,35 @@ import { Cliente } from '../model/cliente';
 })
 export class ClienteService {
 
-  constructor() { }
+  private apiUrl = 'http://localhost:3000/clientes';
 
-    listar(): Cliente[] {
-    return [
-      { id: 1, nome: "Ana", sobrenome: "Souza", cpf: "98765432100", dataNascimento: "1995-05-15", email: "ana@email.com" },
-      { id: 2, nome: "Carlos", sobrenome: "Oliveira", cpf: "11122233344", dataNascimento: "1988-11-23", email: "carlos@email.com" },
-      { id: 3, nome: "Laura", sobrenome: "Silva", cpf: "12345678910", dataNascimento: "2006-10-01", email: "laura@email.com" },
-      { id: 4, nome: "Lucas", sobrenome: "Almeida", cpf: "55566677788", dataNascimento: "2001-02-28", email: "lucas@email.com" }
-    ];
+  constructor(private http: HttpClient) {}
+
+  // Listar clientes
+  listar(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(this.apiUrl);
   }
 
+  // Buscar cliente pelo ID
+  buscarPorId(id: string): Observable<Cliente> {
+    return this.http.get<Cliente>(`${this.apiUrl}/${id}`);
+  }
+
+  // Incluir cliente
+  incluir(cliente: Cliente): Observable<Cliente> {
+    return this.http.post<Cliente>(this.apiUrl, cliente);
+  }
+
+  // Editar cliente
+  editar(cliente: Cliente): Observable<Cliente> {
+    return this.http.put<Cliente>(
+      `${this.apiUrl}/${cliente.id}`,
+      cliente
+    );
+  }
+
+  // Excluir cliente
+  excluir(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
 }
